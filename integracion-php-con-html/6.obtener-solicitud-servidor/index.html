@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iJCode - Obtener solicitudes desde PHP</title>
+</head>
+<body>
+  <script>
+    // Creación de un objeto de formulario 'FormData'
+    const formData = new FormData();
+
+    // Agregar juego de clave-valor al objeto de Formulario
+    formData.append("nombre", "Joel");
+    formData.append("edad", "22");
+
+    // Creación de una petición al servidor
+    fetch("./server.php?color=naranja",{
+      body: formData,
+      method: 'POST',
+    }).then(res => res.text())
+    .then(data => {console.log(data)});
+  </script>
+</body>
+</html>
