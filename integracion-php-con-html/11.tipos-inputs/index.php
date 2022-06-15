@@ -35,8 +35,34 @@
     <label for="teamUser">Equipo Favorito:</label>
     <input type="text" name="user[team]" id="teamUser"/>
     <br>
-
     <br>
+
+    <!-- Input de tipo checkbox -->
+    <label>Selecciona las materias que llevas este semestre:</label>
+    <label for="mate">Matematicas</label>
+    <input type="checkbox" name="materia1" id="mate" value="Matematicas"/>
+    <label for="progra">Programación Funcional</label>
+    <input type="checkbox" name="materia2" id="progra" value="Programción funcional"/>
+    <label for="movil">Desarrollo móvil</label>
+    <input type="checkbox" name="materia3" id="movil" value="Desarrollo móvil"/>
+    <br>
+    <br>
+
+    <!-- Input de tipo radio -->
+    <label>Selecciona tu sexo:</label>
+    <label for="h">Hombre</label>
+    <input type="radio" name="sexo" id="h" value="hombre">
+    <label for="m">Mujer</label>
+    <input type="radio" name="sexo" id="m" value="mujer">
+    <br>
+    <br>
+
+    <!-- Input de tipo 'file' multiple -->
+    <label for="files">Carga tus archivos</label>
+    <input type="file" multiple name="files[]" id="files"/>
+    <br>
+    <br>
+
     <button type="submit">Enviar Formulario</button>
 
   </form>
