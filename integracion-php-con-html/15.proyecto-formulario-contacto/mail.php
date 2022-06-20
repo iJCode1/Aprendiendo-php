@@ -11,11 +11,13 @@ function sendEmail($subject, $body, $email, $name, $html = false){
   // Configuración inicial de servidor de correos 'mailtrap'
   $phpmailer = new PHPMailer();
   $phpmailer->isSMTP();
-  $phpmailer->Host = 'smtp.mailtrap.io';
+  $phpmailer->Host = 'smtp.gmail.com';
   $phpmailer->SMTPAuth = true;
-  $phpmailer->Port = 2525;
-  $phpmailer->Username = '65c34c237ee8f8';
-  $phpmailer->Password = '62168410c45647';
+  $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+  $phpmailer->CharSet = PHPMailer::CHARSET_UTF8;
+  $phpmailer->Port = 465;
+  $phpmailer->Username = ''; // Correo
+  $phpmailer->Password = ''; // Contraseña de Apps en el correo
 
   // Se añaden los Destinatarios
   $phpmailer->setFrom('joel@miempresa.com', 'Joel'); // Desde que correo se envía
