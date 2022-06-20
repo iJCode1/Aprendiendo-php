@@ -1,4 +1,8 @@
 <?php
+
+  // Se importa la lógica que se encuentra en el archivo 'mail.php'
+  require 'mail.php';
+
   // Creando la lógica en el mismo archivo, aunque perfectamente puede estar en otro archivo separado
 
   // Status: Permite guardar un estado para más adelante mostrar una alerta si el correo es enviado o no
@@ -20,6 +24,10 @@
       $subject = htmlentities($_POST['subject']);
       $message = htmlentities($_POST['message']);
   
+      // Se invoca la función de enviar correo
+      $body = "$name <$email> te envia el siguiente mensaje: <br><br> $message";
+      sendEmail($subject, $body, $email, $name, true);
+
       $status = "success";
     }else{
       $status = "error";
