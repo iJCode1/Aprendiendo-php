@@ -33,6 +33,32 @@ class Request{
     $this->method = empty($this->segments[2]) ? "index" : $this->segments[2];
   }
 
+  // Obtener al controlador y al método
+  public function getController(){
+    // Se convierte la primera letra del controlador a mayuscula
+    $controller = ucfirst($this->controller);
+
+    // Retornamos el controlador
+    // Quedando algo como: \home = \HomeController
+    return "App\Http\Controllers\\{$controller}Controller";
+  }
+
+  public function getMethod(){
+    return $this->method;
+  }
+
+  public function send(){
+    $controller = $this->getController();
+    $method = $this->getMethod();
+
+    $response = call_user_func([
+      new $controller,
+      $method
+    ]);
+
+    $response->send();
+  }
+
 }
 
 ?>
