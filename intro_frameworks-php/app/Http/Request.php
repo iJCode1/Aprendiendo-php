@@ -3,6 +3,9 @@
 // Creación del namespace (Directorio de la clase)
 namespace APP\Http;
 
+use App\Http\Response;
+use Exception;
+
 // Creación de clase Request
 class Request{
   
@@ -56,7 +59,16 @@ class Request{
       $method
     ]);
 
-    $response->send();
+    try{
+      if($response instanceof Response){
+        $response->send();
+      }else{
+        throw new \Exception("Error al procesar la respuesta");
+      }
+    }catch(\Exception $e){
+      echo "Detalle: {$e->getMessage()}";
+    }
+
   }
 
 }
