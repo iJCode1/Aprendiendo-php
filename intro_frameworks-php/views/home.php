@@ -1,0 +1,2 @@
+<p>Home de la Página</p>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid, illo amet itaque excepturi consequuntur harum ipsam delectus reiciendis sapiente sequi optio. Temporibus optio suscipit labore itaque dicta aut ad explicabo.</p>
